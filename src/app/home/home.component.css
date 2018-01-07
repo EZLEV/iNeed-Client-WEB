@@ -1,0 +1,363 @@
+h1, h2, h3, h4, h5, p {
+    font-family: 'Noto Sans', sans-serif;
+    color: #424242;
+}
+
+.example-icon {
+    padding: 0 14px;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.transparent {
+    background-color: transparent !important;
+}
+
+.toolbar-home {
+    position: absolute;
+    background-color: transparent;
+}
+
+.button-sign-in {
+    margin-right: 8px;
+}
+
+.button-sign-up {
+    color: white;
+}
+
+.title-toolbar {
+    color: #424242;
+    font-size: x-large;
+    font-family: Lobster, serif;
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .button-sign-in {
+        visibility: hidden;
+    }
+
+}
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .button-sign-in {
+        visibility: hidden;
+    }
+
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+a:visited, a:focus, a:active {
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 30%;
+    left: 15%;
+    width: 70%;
+    margin-right: auto;
+    margin-left: auto;
+    height: 50%;
+}
+
+.carousel-caption h1 {
+    color: #8E24AA;
+    text-shadow: 0 0 0 #8E24AA;
+    font-family: "Noto Sans", serif;
+}
+
+.carousel-caption p {
+    color: #424242;
+    text-shadow: 0 0 0 #424242;
+    font-family: "Noto Sans", serif;
+}
+
+@media screen and (max-width: 767px) {
+    .carousel-caption {
+        position: absolute;
+        top: 30%;
+        left: 0%;
+        width: 100%;
+        height: 50%;
+    }
+
+    .block-one {
+        padding: 2em 2em 2em 2em;
+    }
+
+    .block-secondary {
+        padding: 1em 1em 1em 1em;
+    }
+
+    .block {
+        padding: 2em 0.5em;
+    }
+
+}
+
+@media only screen
+and (min-width: 1224px) {
+    .block-one {
+        padding: 2em 2em 2em 2em;
+    }
+
+    .block-secondary {
+        padding: 2em 2em 2em 2em;
+    }
+
+    .block {
+        padding: 8em 2em;
+    }
+}
+
+.responsive-video {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 60px;
+    overflow: hidden;
+}
+
+.responsive-video iframe,
+.responsive-video object,
+.responsive-video embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.full-width {
+    margin-top: 2em;
+    width: 100%;
+    float: left;
+}
+
+@-webkit-keyframes fadeInUp {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+.fadeInUp {
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+    animation-duration: 2s;
+}
+
+/*
+ Barra Footer (Informações do site)
+ */
+footer {
+    height: auto;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 16px;
+    background-color: #7b1fa2;
+}
+
+.social:hover {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+
+.social {
+    color: white;
+    -webkit-transform: scale(0.8);
+    /* Browser Variations: */
+    -moz-transform: scale(0.8);
+    -o-transform: scale(0.8);
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+}
+
+a {
+    color: white;
+}
+
+a:hover {
+    color: #9E9E9E;
+}
+
+#social-fb:hover {
+    color: #3B5998;
+}
+
+#social-tw:hover {
+    color: #4099FF;
+}
+
+#social-gp:hover {
+    color: #d34836;
+}
+
+#social-em:hover {
+    color: #f39c12;
+}
+
+#social-yt:hover {
+    color: #d34836;
+}
+
+.copyright-text-footer {
+    font-family: 'Noto Sans';
+    font-size: 0.8em;
+    color: white;
+}
+
+.block-one {
+    margin: 0 0 0 0;
+    background-color: #8E24AA;
+    height: auto;
+}
+
+.block-secondary {
+    margin: 0 0 0 0;
+    background-color: #FB8C00;
+    height: auto;
+}
+
+.block {
+    margin: 0 0 0 0;
+    height: auto;
+    background: #ffffff;
+}
+
+.div-box {
+    margin-top: 2em;
+}
+
+.div-box-item {
+    display: table-row;
+}
+
+.div-image-box {
+    vertical-align: middle;
+    width: 80px;
+    height: 80px;
+    padding: 2px;
+    border: solid 3px #fff;
+    border-radius: 80px;
+    background-size: auto 40px;
+    white-space: nowrap;
+    text-align: center;
+    margin: 1em 8px 1em 0;
+}
+
+.div-image-box:before,
+.div-image-box_before {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.image-box {
+    vertical-align: middle;
+    max-height: 40px;
+    max-width: 40px;
+}
+
+.div-text {
+    display: table-cell;
+}
+
+.div-text h3 {
+    color: white;
+}
+
+.div-text p {
+    color: #E0E0E0;
+}
+
+@-webkit-keyframes icon-animate {
+    from {
+        background-position: center top;
+    }
+
+    to {
+        background-position: center -9400px;
+    }
+}
+
+@-moz-keyframes icon-animate {
+    from {
+        background-position: center top;
+    }
+
+    to {
+        background-position: center -9400px;
+    }
+}
+
+@keyframes icon-animate {
+    from {
+        background-position: center top;
+    }
+
+    to {
+        background-position: center -9400px;
+    }
+}
+
+.icon {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-size: 200px 9600px;
+    background: white no-repeat center top;
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    cursor: pointer;
+    display: table;
+    margin: 0 auto;
+}
+
+.icon:hover {
+    -webkit-animation: icon-animate 1.7s steps(47) infinite;
+    -moz-animation: icon-animate 1.7s steps(47) infinite;
+    animation: icon-animate 1.7s steps(47) infinite;
+}
+
+.icon.search {
+    background-image: url(../../assets/img/search.png);
+}
+
+.icon.love {
+    background: url(../../assets/img/love.png);
+}

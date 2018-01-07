@@ -1,0 +1,60 @@
+<h2>Funcionários</h2>
+<p>Quadro de funcionários e suas respectivas permissões.</p>
+
+<br>
+
+<div fxLayout="column">
+  <div fxFlex="100">
+    <mat-form-field fxFlex="100">
+      <mat-select fxFlex="100" id="options-select" label="Loja" placeholder="Loja" [(ngModel)]="lastSelected"
+                  (change)="onChange($event.value)">
+        <mat-option *ngFor="let store of stores" [value]="store.$key">{{ store.name + " - " + store.location.address
+          }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div fxFlex="100" class="tbl mat-elevation-z5 animation-start">
+    <mat-table #table [dataSource]="dataSource">
+
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef> Nome</mat-header-cell>
+        <mat-cell *matCellDef="let employee"> {{employee.name}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="email">
+        <mat-header-cell *matHeaderCellDef> Email</mat-header-cell>
+        <mat-cell *matCellDef="let employee"> {{employee.email}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="permission">
+        <mat-header-cell *matHeaderCellDef> Permissão</mat-header-cell>
+        <mat-cell *matCellDef="let employee"> {{employee.permissionLevel}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef> Ações</mat-header-cell>
+        <mat-cell *matCellDef="let employee">
+          <button mat-icon-button color="accent" (click)="updateEmployee(employee.$key, employee.permissionLevel)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button color="accent"
+                  (click)="deleteEmployeeFromStore(employee.$key, employee.permissionLevel)">
+            <mat-icon>delete</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="deleteEmployee(employee.$key, employee.permissionLevel)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div>
+</div>
+<div fxLayout="row" fxLayoutAlign="end end">
+  <a class="mat-fab-margin-top" href="/shopkeeper/dashboard/admin/employees/add" mat-fab>
+    <mat-icon class="md-24">add</mat-icon>
+  </a>
+</div>

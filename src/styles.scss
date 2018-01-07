@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+//@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import '~@angular/material/theming';
+@import '~@covalent/core/theming/all-theme';
+@import url('https://fonts.googleapis.com/css?family=Lobster|Noto+Sans');
+
+@include mat-core();
+
+$primary: mat-palette($mat-purple, 600);
+$accent:  mat-palette($mat-orange, 600, A100, A400);
+
+$warn:    mat-palette($mat-red, 600);
+
+$theme: mat-light-theme($primary, $accent, $warn);
+
+.mat-raised-button.mat-accent, .mat-fab.mat-accent, .mat-mini-fab.mat-accent {
+    color: white !important;
+}
+
+@include angular-material-theme($theme);
+@include covalent-theme($theme);
+
+body {
+  background-color: #fff !important;
+  font-family: 'Noto Sans', sans-serif;
+}

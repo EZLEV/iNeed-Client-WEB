@@ -1,0 +1,51 @@
+.glyphicon-refresh-animate {
+    -animation: spin .7s infinite linear;
+    -webkit-animation: spin2 .7s infinite linear;
+}
+
+.button-sign-in-google {
+    color: #fff;
+}
+
+.button-sign-in-google mat-icon {
+    float: left;
+    margin-top: 0.6em;
+}
+
+.button-sign-in-google span{
+    color: #000000;
+}
+
+.button-sign-in-auth {
+    color: #fff;
+}
+
+.button-sign-in-auth mat-icon {
+    float: left;
+    margin-top: 0.6em;
+}
+
+.button-sign-in-auth span{
+    color: #000000;
+}
+.mat-card-actions, mat-card-content, mat-card-subtitle, mat-card-title{
+    padding-bottom: 2px !important;
+}
+
+@-webkit-keyframes spin2 {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: scale(1) rotate(0deg);
+    }
+    to {
+        transform: scale(1) rotate(360deg);
+    }
+}

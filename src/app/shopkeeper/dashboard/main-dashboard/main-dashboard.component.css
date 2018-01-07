@@ -1,0 +1,68 @@
+.img-card-action {
+  display: block;
+  margin: auto;
+}
+
+.image-dashboard {
+  width: 75%;
+  height: 75%;
+  margin: auto;
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+}
+
+.title-ineed {
+  font-family: Lobster;
+  font-size: xx-large;
+  animation: fadein 6s;
+  opacity: 1;
+  animation-name: fadeIn;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 2s;
+}
+
+.text-one {
+  animation: fadein 2s;
+}
+
+.text-two {
+  animation: fadein 4s;
+}
+
+a {
+  color: #666666;
+  font-size: 14px;
+}
+
+.material-icons {
+  vertical-align: middle;
+  margin-right: 4px;
+}
+
+a:focus, a:hover, a {
+  outline: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover {
+  color: #979797;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0
+  }
+  to {
+    opacity: 1
+  }
+}

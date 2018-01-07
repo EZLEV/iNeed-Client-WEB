@@ -1,0 +1,57 @@
+<mat-card>
+    <mat-card-title layout="row" fxLayoutAlign="center center">
+        <span class="md-title" style="font-family: Lobster">iNeed</span>
+    </mat-card-title>
+    <mat-card-subtitle fxLayoutAlign="center center">Conecte-se ao iNeed</mat-card-subtitle>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+        <div fxLayout="column">
+            <button fxFlex="100" class="button-sign-in-google" mat-raised-button (click)="signInWithGoogle()">
+                <mat-icon svgIcon="google"></mat-icon>
+                <span tyle="padding-left: 10px">SOU GERENTE</span>
+            </button>
+            <br/>
+            <button fxFlex="100" class="button-sign-in-auth" mat-raised-button (click)="signInAsShopkeeper()">
+                <mat-icon svgIcon="auth0"></mat-icon>
+                <span>SOU FUNCIONÁRIO</span>
+            </button>
+            <br/>
+            <span fxLayoutAlign="center center">OU</span>
+        </div>
+        <mat-divider></mat-divider>
+        <form [formGroup]="signInForm">
+            <div fxLayout="column">
+                <div fxFlex="100">
+                    <mat-form-field fxFlex="100">
+                        <input matInput placeholder="Email" [formControl]="signInForm.controls['email']" required>
+                        <mat-error *ngIf="signInForm.controls['email'].hasError('required')">
+                            <strong>Informe</strong> seu email
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div fxFlex="100">
+                    <mat-form-field fxFlex="100">
+                        <input matInput type="password" placeholder="Senha"
+                               [formControl]="signInForm.controls['password']"
+                               required>
+                        <mat-error *ngIf="signInForm.controls['password'].hasError('required')">
+                            Coloque a sua senha
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+        </form>
+    </mat-card-content>
+    <mat-card-actions>
+        <div fxLayout="column">
+            <a routerLink="/subscribe/signup" fxFlex="100" style="margin: 2px;" fxLayoutAlign="left">Não tenho conta
+            </a>
+            <button fxFlex="100" mat-raised-button color="accent" [disabled]="!signInForm.valid"
+                    (click)="signInWithEmail(signInForm.value)">ACESSAR
+            </button>
+        </div>
+        <div fxLayout="row">
+            <a fxLayoutAlign="center center" fxFlex="100" style="margin: 4px;" routerLink="/subscribe/forgot">Esqueceu sua senha?</a>
+        </div>
+    </mat-card-actions>
+</mat-card>

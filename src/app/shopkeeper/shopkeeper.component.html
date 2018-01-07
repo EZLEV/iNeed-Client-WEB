@@ -1,0 +1,84 @@
+<div class="container-fluid display-table abs">
+  <div class="row display-table-row">
+    <mat-sidenav-container class="n-container">
+      <mat-sidenav [disableClose]="isDesktop" [opened]="isDesktop" #sidenav class="n-sidenav" [mode]="mode">
+        <img [src]="user?.providerData[0]?.photoURL || user.photoURL" alt="user picture"
+             class="n-circle-logo n-margin ">
+        <br/>
+        <div class="n-header">
+          <span class="mat-nav-name n-padding">{{user.displayName}}</span>
+          <br/>
+          <span class="mat-nav-email n-padding ">{{user.email}}</span>
+          <br/>
+        </div>
+        <mat-divider></mat-divider>
+        <mat-nav-list>
+          <a *ngFor="let item of routes" mat-list-item [routerLink]="item.route" [target]="item.target"
+             (click)="(!sidenav.disableClose) ? sidenav.close() : null">
+            <mat-icon>{{item.icon}}</mat-icon>
+            {{item.title}}</a>
+        </mat-nav-list>
+      </mat-sidenav>
+
+      <mat-toolbar color="primary" class="n-toolbar mat-elevation-z5">
+        <button mat-icon-button (click)="(sidenav.opened) ? sidenav.close() : sidenav.open()" *ngIf="!isDesktop">
+          <mat-icon>menu</mat-icon>
+        </button>
+
+        <span class="title-toolbar">iNeed</span>
+
+        <span class="spacer" style="color: white"></span>
+
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="onClickLogout()">
+            <mat-icon>account_box</mat-icon>
+            <span>Meu perfil</span>
+          </button>
+          <button mat-menu-item (click)="onClickLogout()">
+            <mat-icon>exit_to_app</mat-icon>
+            <span>Sair</span>
+          </button>
+        </mat-menu>
+      </mat-toolbar>
+
+      <!-- Container -->
+      <div class="user-dashboard">
+        <router-outlet></router-outlet>
+      </div>
+
+      <!-- Footer -->
+      <div class="row">
+        <footer class="footer mat-elevation-z5">
+          <div class="text-center center-block">
+            <br/>
+            <a href="#">
+              <i id="social-fb" class="fa fa-facebook fa-2x social"></i>
+            </a>
+            <a href="#">
+              <i id="social-gp" class="fa fa-google-plus fa-2x social"></i>
+            </a>
+            <a href="#">
+              <i id="social-em" class="fa fa-envelope-square fa-2x social"></i>
+            </a>
+            <a href="#">
+              <i id="social-yt" class="fa fa-youtube fa-2x social"></i>
+            </a>
+
+            <div class="row">
+              <div class="col-md-10">
+                <h4 class="copyright-text-footer" align="left">© COPYRIGHT 2017 - iNeed, TODOS OS DIREITOS
+                  RESERVADOS.</h4>
+              </div>
+              <div class="col-md-1"><a href="#">Sobre</a></div>
+              <div class="col-md-1"><a href="#">Ajuda</a></div>
+            </div>
+
+          </div>
+        </footer>
+      </div>
+    </mat-sidenav-container>
+  </div>
+</div>

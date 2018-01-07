@@ -1,0 +1,35 @@
+.center-outlet {
+    position: absolute;
+    width: 100%;
+    min-width: 22em;
+    top: 16%;
+}
+
+.center-card {
+    position: absolute;
+    min-width: 22em;
+    top: 16%;
+}
+
+.box-colored {
+    height: 50%;
+    background-color: #7a43b6;
+    width: 100%;
+    position: fixed;
+    animation: 1s ease-out 0s 1 slideInFromStart;
+}
+
+.box {
+    width: 20em;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@keyframes slideInFromStart {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
